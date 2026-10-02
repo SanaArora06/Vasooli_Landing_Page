@@ -3,7 +3,6 @@ import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { StartGuide } from "@/components/start-guide";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -38,7 +37,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
-        <StartGuide />
         <MobileCta />
       </body>
     </html>

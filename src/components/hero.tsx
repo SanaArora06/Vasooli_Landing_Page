@@ -1,6 +1,7 @@
+import { IconPerson } from "@/components/icons";
 import { FamilyScene } from "@/components/illustrations";
 import { PhonePreview } from "@/components/phone-preview";
-import { IconPerson } from "@/components/icons";
+import { StartGuide } from "@/components/start-guide";
 
 const buttonPrimary =
   "inline-flex min-h-12 items-center justify-center rounded-full bg-teal px-5 py-3 text-center text-base font-semibold text-paper hover:bg-teal-mid";
@@ -26,7 +27,7 @@ export function Hero() {
             Bring your bills, documents and follow-ups together inside Polifyx—from your first diagnostic bill through settlement.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#pilot" className={`${buttonPrimary} sm:min-w-44`}>
+            <a href="#pilot" data-hero-cta className={`${buttonPrimary} sm:min-w-44`}>
               Join the pilot
             </a>
             <a href="#how-it-works" className={`${buttonSecondary} sm:min-w-44`}>
@@ -41,6 +42,9 @@ export function Hero() {
             <p className="mt-3 border-t border-line pt-3 font-serif text-lg leading-snug text-teal">
               Automate the chase. Keep consequential decisions with you.
             </p>
+          </div>
+          <div className="mt-6">
+            <StartGuide />
           </div>
         </div>
         <div className="relative">

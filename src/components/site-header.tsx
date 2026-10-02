@@ -37,6 +37,7 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    document.body.dataset.nav = open ? "open" : "closed";
     if (!open) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
