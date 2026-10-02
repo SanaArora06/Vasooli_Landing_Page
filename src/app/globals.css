@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-source-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Fraunces, Georgia, "Times New Roman", serif;
+  --color-ivory: #f3eee6;
+  --color-ivory-deep: #e6dfd2;
+  --color-paper: #fbf8f3;
+  --color-ink: #1a3330;
+  --color-ink-soft: #3a524e;
+  --color-teal: #143f3c;
+  --color-teal-mid: #1f5c55;
+  --color-sage: #e5f0e8;
+  --color-sage-deep: #c5dbcf;
+  --color-peach: #e7a27a;
+  --color-peach-soft: #f6e4d6;
+  --color-line: #e3d9cb;
+  --color-danger: #8c3a32;
+  --color-danger-bg: #f8ece8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 12rem;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background:
+    radial-gradient(ellipse 70% 40% at 0% -10%, rgba(231, 162, 122, 0.16), transparent 50%),
+    radial-gradient(ellipse 55% 36% at 100% 0%, rgba(197, 219, 207, 0.7), transparent 46%),
+    var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #c5dbcf;
+  color: #143f3c;
+}
+
+:focus-visible {
+  outline: 3px solid #143f3c;
+  outline-offset: 3px;
+}
+
+.ink-surface :focus-visible {
+  outline-color: #f6e4d6;
+}
+
+button:not(:disabled),
+a[href],
+summary,
+[role="tab"] {
+  cursor: pointer;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: #143f3c;
+  color: #fbf8f3;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.motion-rise {
+  animation: rise 420ms ease;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-rise {
+    animation: none;
+  }
+}
