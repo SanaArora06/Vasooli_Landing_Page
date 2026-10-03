@@ -31,12 +31,22 @@ const FAQS = [
   {
     question: "What happens if a document is missing?",
     answer:
-      "Vasooli identifies the gap and can suggest a retrieval step within the authorised scope. You can see what is present, what is missing, and why an action is proposed. A document is not treated as received until it actually is.",
+      "Vasooli names the gap and can chase it only on routes you have allowed. You can see what is present, what is missing, and why an action is proposed. A document is not treated as received until it actually is.",
   },
   {
     question: "What happens after a partial settlement?",
     answer:
-      "Vasooli compares the settlement with the submitted claim and explains the deductions for you to review. You choose whether to accept the partial settlement or seek a review. In the proposed model, an Insurance Samadhan specialist can be brought in when there is uncertainty or a dispute.",
+      "Vasooli matches the settlement to the submitted claim and names the clause behind each deduction. Accepting that amount stays with you. In the proposed model, an Insurance Samadhan specialist can be brought in when there is uncertainty or a dispute.",
+  },
+  {
+    question: "Will it message me all the time?",
+    answer:
+      "The proposed habit is quiet. You forward a bill and get one line back. Vasooli interrupts twice: a consent card before filing, and a one-time code at submission. It never asks for the insurer password. The only unprompted note is seven days before a filing window closes, if allowed money is still unclaimed. This page does not send those messages.",
+  },
+  {
+    question: "What if we have two policies?",
+    answer:
+      "Both policies are laid next to the same episode. You approve which one is filed. Vasooli does not file both, and it does not choose for you.",
   },
   {
     question: "Is the pilot available now?",

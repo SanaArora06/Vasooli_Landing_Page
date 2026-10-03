@@ -14,6 +14,9 @@ export function FamilySupport() {
             A spouse, parent, child or other family member can help organise bills and reports, with the patient’s permission.
           </p>
           <p className="mt-3 text-ink">
+            In the proposed setup you name which family members Vasooli may act for. That list is one of the three limits, with the rupee ceiling and the escalation ceiling.
+          </p>
+          <p className="mt-3 text-ink">
             Assisted onboarding — sitting down together to start the episode — is a proposed pilot option. So is partner-sponsored access, for example through an employer or a hospital. These are not established nationwide services.
           </p>
           <a

@@ -8,8 +8,8 @@ const STEPS = [
     id: "policy",
     title: "Add your policy and first bill",
     provide: "Your policy and the first bill — often a diagnostic bill, before any hospital stay.",
-    does: "Starts an episode and identifies the policy terms that matter for the documents that follow.",
-    person: "You confirm this is the right policy and the right episode.",
+    does: "Starts an episode and reads the terms that will decide it: windows, sub-limits, exclusions, documents, and the filing deadline. Nothing is treated as eligible yet.",
+    person: "You confirm this is the right policy and episode, and you set three limits: a rupee ceiling, how far an escalation may go, and which family members Vasooli may act for.",
   },
   {
     id: "documents",

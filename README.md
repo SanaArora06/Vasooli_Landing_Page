@@ -83,4 +83,4 @@ Still needed from the brand owners:
 - Official colour values, if they should replace the warm ivory, teal, sage and peach palette used here
 - Verified website, privacy notice and contact links
 
-Do not add hospital, TPA, insurer or technology logos as partners unless that use is explicitly authorised. Do not add legal policies, phone numbers, testimonials or certification badges that have not been supplied.
+Do not add hospital, TPA, insurer or technology logos as partners unless that use is explicitly authorised. Gnani, Pine Labs, Delhivery, Tata 1mg, Medi Assist and Policybazaar are not partners of this page and must not appear as logos or endorsements. Do not add legal policies, phone numbers, testimonials, interview statistics or certification badges that have not been supplied.

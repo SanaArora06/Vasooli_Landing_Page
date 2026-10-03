@@ -35,7 +35,7 @@ export function PaperworkJourney() {
             The hospital bill is only part of the paperwork.
           </h2>
           <p className="mt-4 text-lg text-ink">
-            A reimbursement file often starts before admission and keeps growing after discharge. Vasooli keeps that whole episode together.
+            Cashless admission does not collect the bills that come before it. Scans and reports are often created before anyone has opened a claim. Vasooli keeps that whole episode together, through recovery and settlement.
           </p>
         </div>
 

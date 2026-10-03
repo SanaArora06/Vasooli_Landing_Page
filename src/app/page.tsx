@@ -1,3 +1,4 @@
+import { Everyday } from "@/components/everyday";
 import { FamilySupport } from "@/components/family-support";
 import { Faqs } from "@/components/faqs";
 import { Hero } from "@/components/hero";
@@ -45,6 +46,7 @@ export default async function Home({
       <Hero />
       <PaperworkJourney />
       <HowItWorks />
+      <Everyday />
       <SampleClaim />
       <HumanControl />
       <FamilySupport />

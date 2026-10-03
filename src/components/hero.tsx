@@ -26,6 +26,9 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink">
             Bring your bills, documents and follow-ups together inside Polifyx—from your first diagnostic bill through settlement.
           </p>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-ink-soft">
+            In Hindi, vasooli is the work of collecting what is owed. This one sits on the household’s side of the table.
+          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#pilot" data-hero-cta className={`${buttonPrimary} sm:min-w-44`}>
               Join the pilot

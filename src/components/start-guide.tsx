@@ -11,7 +11,7 @@ const PATHS = [
   {
     href: "#family",
     title: "I’m helping family",
-    body: "A family member can help organise documents, with the patient’s permission.",
+    body: "You name which family members Vasooli may act for. That list is one of the three limits you set.",
   },
   {
     href: "#pilot",
