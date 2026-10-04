@@ -7,14 +7,14 @@ const buttonSecondary =
 
 export function Hero() {
   return (
-    <section className="bg-white px-5 pb-10 pt-8 sm:px-8 sm:pt-14" aria-labelledby="hero-heading">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12">
+    <section className="bg-white px-5 pb-6 pt-6 sm:px-8 sm:pt-8" aria-labelledby="hero-heading">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 lg:grid-cols-2">
         <div>
           <p className="text-sm font-semibold text-teal-mid">Vasooli · Inside Polifyx · With Insurance Samadhan</p>
-          <h1 id="hero-heading" className="mt-3 font-serif text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
+          <h1 id="hero-heading" className="mt-2 font-serif text-5xl font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl">
             Recovery is enough.
           </h1>
-          <p className="mt-4 max-w-md text-lg leading-relaxed text-ink">
+          <p className="mt-3 text-lg leading-relaxed text-ink">
             Vasooli gathers the bills around a hospital stay. You approve what is sent.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -34,7 +34,7 @@ export function Hero() {
             width={1200}
             height={900}
             priority
-            className="h-auto w-full rounded-[1.75rem] object-cover shadow-[0_20px_40px_-28px_rgba(34,34,34,0.45)]"
+            className="h-64 w-full rounded-[1.75rem] object-cover shadow-[0_20px_40px_-28px_rgba(34,34,34,0.45)] sm:h-80 lg:h-[22rem]"
           />
         </figure>
       </div>

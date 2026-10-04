@@ -40,7 +40,7 @@ export function SampleClaim() {
   }
 
   return (
-    <section id="sample" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="sample-heading">
+    <section id="sample" className="scroll-mt-24 px-5 py-8 sm:px-8 sm:py-10" aria-labelledby="sample-heading">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>

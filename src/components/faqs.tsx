@@ -60,7 +60,7 @@ export function Faqs() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faqs" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="faq-heading">
+    <section id="faqs" className="scroll-mt-24 bg-ivory px-5 py-8 sm:px-8 sm:py-10" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
           Questions families ask

@@ -38,8 +38,8 @@ export function Insight() {
   const stage = STAGES.find((item) => item.id === current) ?? STAGES[0];
 
   return (
-    <section id="around" className="scroll-mt-24 bg-ivory px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="insight-heading">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+    <section id="around" className="scroll-mt-24 bg-ivory px-5 py-8 sm:px-8 sm:py-10" aria-labelledby="insight-heading">
+      <div className="mx-auto grid max-w-6xl items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <div>
           <h2 id="insight-heading" className="max-w-xl font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
             The hospital bill is settled. What about everything around it?

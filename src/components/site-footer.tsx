@@ -2,7 +2,7 @@ import { InsuranceSamadhanLogo, VasooliLockup } from "@/components/logos";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-ivory px-5 pb-12 pt-10 text-ink sm:px-8 md:pt-14">
+    <footer className="border-t border-line bg-white px-5 pb-10 pt-8 text-ink sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="flex flex-wrap items-center gap-4">

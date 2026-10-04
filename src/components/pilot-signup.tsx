@@ -115,8 +115,8 @@ export function PilotSignup({
   }
 
   return (
-    <section id="pilot" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="pilot-heading">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
+    <section id="pilot" className="scroll-mt-24 px-5 py-8 sm:px-8 sm:py-10" aria-labelledby="pilot-heading">
+      <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-start">
         <div>
           <h2 id="pilot-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
             Let us know when your family needs a hand.

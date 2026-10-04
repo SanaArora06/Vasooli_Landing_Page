@@ -27,8 +27,10 @@ export function PageShell({
       <SampleClaim />
       <Responsibility />
       <Caregiver />
-      <Credibility />
-      <ForgottenBills />
+      <div className="mx-auto grid max-w-6xl gap-4 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-2">
+        <Credibility />
+        <ForgottenBills />
+      </div>
       <PilotSignup initialRecorded={initialRecorded} notice={notice} />
       <Faqs />
     </JourneyProvider>

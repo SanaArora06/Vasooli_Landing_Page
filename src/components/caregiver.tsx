@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export function Caregiver() {
   return (
-    <section id="family" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="family-heading">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2">
+    <section id="family" className="scroll-mt-24 px-5 py-8 sm:px-8 sm:py-10" aria-labelledby="family-heading">
+      <div className="mx-auto grid max-w-6xl items-center gap-6 lg:grid-cols-2">
         <Image
           src="/photos/parent-daughter.jpg"
           alt="A father and daughter smiling as they walk through a garden."
           width={1200}
           height={900}
-          className="h-auto w-full rounded-[1.75rem] object-cover"
+          className="h-64 w-full rounded-[1.75rem] object-cover sm:h-72"
         />
         <div>
           <h2 id="family-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">

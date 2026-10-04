@@ -1,7 +1,7 @@
 export function ForgottenBills() {
   return (
-    <section id="check" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-16" aria-labelledby="check-heading">
-      <div className="mx-auto max-w-6xl">
+    <section id="check" className="scroll-mt-24 h-full rounded-[1.75rem] border border-line bg-ivory px-5 py-6 sm:px-6" aria-labelledby="check-heading">
+      <div>
         <h2 id="check-heading" className="max-w-xl font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
           Start with one policy. And one bill.
         </h2>
