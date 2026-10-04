@@ -17,25 +17,31 @@ export function VasooliMark({
       aria-label={title}
       focusable="false"
     >
-      <rect width="48" height="48" rx="14" fill="#2D64BC" />
-      <circle cx="33" cy="14" r="6" fill="#FAAA52" />
+      <rect width="48" height="48" rx="13" fill="#2D64BC" />
       <path
-        d="M9 27c6-8 12-10 18-8"
-        fill="none"
-        stroke="#8FD4F7"
-        strokeWidth="2.2"
+        d="M8 13.2c0-2.2 1.8-4 4-4h11.2l7 7v11.6c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4V13.2z"
+        fill="#FFF8F1"
+      />
+      <path d="M23.2 9.2v5.2c0 1 .8 1.8 1.8 1.8H30.2" fill="#FAAA52" />
+      <path
+        d="M12.4 17.4h7.4M12.4 21.2h4.8"
+        stroke="#2D64BC"
+        strokeWidth="1.9"
         strokeLinecap="round"
       />
-      <rect x="11" y="20" width="18" height="18" rx="3.5" fill="#FFFDF9" />
-      <path d="M15 26.5h10M15 31h6" stroke="#222222" strokeWidth="1.7" strokeLinecap="round" />
-      <circle cx="33.5" cy="33.5" r="8" fill="#F26F21" />
       <path
-        d="M29.6 33.6l2.4 2.4 4.6-5"
+        d="M12.4 27.4h3l1.5-3.1 2.5 6.2 1.7-3.1h2.8"
         fill="none"
-        stroke="#FFFDF9"
-        strokeWidth="1.8"
+        stroke="#F26F21"
+        strokeWidth="1.9"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+      <circle cx="35.7" cy="34.6" r="9.15" fill="#FFF8F1" />
+      <circle cx="35.7" cy="34.6" r="7.55" fill="#F26F21" />
+      <path
+        d="M35.7 38.9c-3.15-2.05-5.35-4.15-5.35-6.15 0-1.55 1.2-2.7 2.7-2.7.95 0 1.75.5 2.65 1.5.9-1 1.7-1.5 2.65-1.5 1.5 0 2.7 1.15 2.7 2.7 0 2-2.2 4.1-5.35 6.15z"
+        fill="#FFF8F1"
       />
     </svg>
   );
