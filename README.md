@@ -74,7 +74,7 @@ If the site is served from a public origin that differs from the internal host h
 
 ## Assets and information still required before a public launch
 
-The Insurance Samadhan mark on the page is the icon supplied for this project (`public/brand/insurance-samadhan.png`), shown with the name in type. The Vasooli mark is a working logo in the site colours: a blue tile, a cream file with an amber corner, an orange pulse, and a heart. Replace it if a final brand mark is supplied.
+The Insurance Samadhan mark on the page is the icon supplied for this project (`public/brand/insurance-samadhan.png`), shown with the name in type. The Vasooli mark is a working logo: a pale green tile, a cream file with an amber corner, an orange pulse, and a heart. Replace it if a final brand mark is supplied.
 
 Still needed from the brand owners:
 

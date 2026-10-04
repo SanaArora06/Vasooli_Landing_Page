@@ -17,7 +17,7 @@ export function VasooliMark({
       aria-label={title}
       focusable="false"
     >
-      <rect width="48" height="48" rx="13" fill="#2D64BC" />
+      <rect width="48" height="48" rx="13" fill="#B7E0C6" />
       <path
         d="M8 13.2c0-2.2 1.8-4 4-4h11.2l7 7v11.6c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4V13.2z"
         fill="#FFF8F1"
@@ -25,7 +25,7 @@ export function VasooliMark({
       <path d="M23.2 9.2v5.2c0 1 .8 1.8 1.8 1.8H30.2" fill="#FAAA52" />
       <path
         d="M12.4 17.4h7.4M12.4 21.2h4.8"
-        stroke="#2D64BC"
+        stroke="#3E8F6A"
         strokeWidth="1.9"
         strokeLinecap="round"
       />

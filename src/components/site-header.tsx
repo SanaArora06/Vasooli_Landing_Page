@@ -6,7 +6,6 @@ import { InsuranceSamadhanLogo, VasooliLockup } from "@/components/logos";
 
 const LINKS = [
   { href: "#around", id: "around", label: "Around the stay" },
-  { href: "#where", id: "where", label: "Where you are" },
   { href: "#sample", id: "sample", label: "Sample claim" },
   { href: "#faqs", id: "faqs", label: "FAQs" },
 ];

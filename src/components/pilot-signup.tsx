@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useJourney } from "@/components/journey";
 import {
   LANGUAGES,
   STAGES,
@@ -23,7 +22,7 @@ export function PilotSignup({
   initialRecorded: boolean;
   notice: Notice;
 }) {
-  const { stage, setStage } = useJourney();
+  const [stage, setStage] = useState<Stage | "">("");
   const [recorded, setRecorded] = useState(initialRecorded);
   const [name, setName] = useState("");
   const [contactMethod, setContactMethod] = useState<"email" | "phone">("email");
