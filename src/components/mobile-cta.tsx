@@ -41,7 +41,7 @@ export function MobileCta() {
   if (!show) return null;
 
   return (
-    <div className="mobile-join fixed inset-x-0 bottom-0 z-30 border-t border-line bg-ivory/95 p-3 backdrop-blur-md md:hidden">
+    <div className="mobile-join fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 p-3 backdrop-blur-md md:hidden">
       <a
         href="#pilot"
         className="flex min-h-12 items-center justify-center rounded-full bg-teal px-5 text-base font-semibold text-paper"

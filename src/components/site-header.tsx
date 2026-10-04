@@ -52,7 +52,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header id="top" className="sticky top-0 z-50 border-b border-line/80 bg-ivory/92 backdrop-blur-md">
+    <header id="top" className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3 rounded-lg">
           <VasooliLockup markClassName="h-9 w-9" />
@@ -96,7 +96,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav id={menuId} aria-label="Primary" className="border-t border-line bg-ivory px-5 py-3 lg:hidden">
+        <nav id={menuId} aria-label="Primary" className="border-t border-line bg-white px-5 py-3 lg:hidden">
           <div className="px-3 pb-3">
             <InsuranceSamadhanLogo />
           </div>

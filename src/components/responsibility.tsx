@@ -2,7 +2,7 @@ const GROUPS = [
   {
     title: "Vasooli helps",
     items: [
-      "Organise bills into one claim journey",
+      "Organise the bills for one treatment",
       "Flag missing evidence",
       "Prepare claim documents",
       "Track follow-up you have authorised",
@@ -28,7 +28,7 @@ const GROUPS = [
 
 export function Responsibility() {
   return (
-    <section id="decisions" className="scroll-mt-24 bg-sage/50 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="decisions-heading">
+    <section id="decisions" className="scroll-mt-24 bg-ivory px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="decisions-heading">
       <div className="mx-auto max-w-6xl">
         <p className="font-serif text-xl text-teal sm:text-2xl">Automate the chase, not invent the truth.</p>
         <h2 id="decisions-heading" className="mt-3 max-w-2xl font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
