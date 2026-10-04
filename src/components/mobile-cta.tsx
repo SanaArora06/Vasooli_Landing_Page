@@ -20,7 +20,9 @@ export function MobileCta() {
       const formOnScreen = pilotRect
         ? pilotRect.top < window.innerHeight * 0.72 && pilotRect.bottom > 120
         : false;
-      setShow(pastHero && !formOnScreen);
+      const visible = pastHero && !formOnScreen;
+      setShow(visible);
+      document.body.style.paddingBottom = visible ? "4.75rem" : "";
     };
 
     update();
@@ -32,6 +34,7 @@ export function MobileCta() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
       observer.disconnect();
+      document.body.style.paddingBottom = "";
     };
   }, []);
 
@@ -43,7 +46,7 @@ export function MobileCta() {
         href="#pilot"
         className="flex min-h-12 items-center justify-center rounded-full bg-teal px-5 text-base font-semibold text-paper"
       >
-        Get in early
+        Join the pilot waitlist
       </a>
     </div>
   );

@@ -24,11 +24,16 @@ function ensureSchema(db: PilotDb) {
       contact_method TEXT NOT NULL,
       contact_value TEXT NOT NULL,
       role TEXT NOT NULL,
+      stage TEXT,
       language TEXT,
       consent_to_contact INTEGER NOT NULL,
       created_at TEXT NOT NULL
     )
   `);
+  const columns = db.prepare("PRAGMA table_info(pilot_interest)").all() as Array<{ name: string }>;
+  if (!columns.some((column) => column.name === "stage")) {
+    db.exec("ALTER TABLE pilot_interest ADD COLUMN stage TEXT");
+  }
 }
 
 export function openPilotDb(filePath: string): PilotDb {
@@ -43,6 +48,8 @@ export function openPilotDb(filePath: string): PilotDb {
 export function getDb(): PilotDb {
   if (!globalForDb.pilotDb) {
     globalForDb.pilotDb = openPilotDb(databasePath());
+  } else {
+    ensureSchema(globalForDb.pilotDb);
   }
   return globalForDb.pilotDb;
 }
@@ -55,15 +62,15 @@ export function insertPilotInterest(db: PilotDb, record: CleanPilot, receipt: st
   const result = db
     .prepare(
       `INSERT INTO pilot_interest
-        (receipt, name, contact_method, contact_value, role, language, consent_to_contact, created_at)
-       VALUES (?, ?, ?, ?, ?, ?, 1, ?)`,
+        (receipt, name, contact_method, contact_value, role, stage, language, consent_to_contact, created_at)
+       VALUES (?, ?, ?, ?, 'waitlist', ?, ?, 1, ?)`,
     )
     .run(
       receipt,
       record.name,
       record.contactMethod,
       record.contactValue,
-      record.role,
+      record.stage,
       record.language,
       new Date().toISOString(),
     );

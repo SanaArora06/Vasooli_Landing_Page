@@ -4,12 +4,12 @@ export const SUCCESS_MESSAGE =
 export const STORAGE_UNAVAILABLE_MESSAGE =
   "Signup is unavailable in this preview. Your details were not saved.";
 
-export const ROLES = [
-  { value: "patient", label: "Patient" },
-  { value: "family_caregiver", label: "Family caregiver" },
-  { value: "hospital", label: "Hospital" },
-  { value: "employer", label: "Employer / benefits team" },
-  { value: "tpa", label: "TPA" },
+export const STAGES = [
+  { value: "tests", label: "Tests or treatment have started" },
+  { value: "discharge", label: "We've just been discharged" },
+  { value: "waiting", label: "We're waiting for reimbursement" },
+  { value: "partial", label: "We received a partial payment or rejection" },
+  { value: "exploring", label: "Just exploring" },
 ] as const;
 
 export const LANGUAGES = [
@@ -25,13 +25,13 @@ export const LANGUAGES = [
   "Punjabi",
 ] as const;
 
-export type Role = (typeof ROLES)[number]["value"];
+export type Stage = (typeof STAGES)[number]["value"];
 
 export type CleanPilot = {
   name: string;
   contactMethod: "email" | "phone";
   contactValue: string;
-  role: Role;
+  stage: Stage;
   language: string | null;
 };
 
@@ -39,13 +39,13 @@ export type FieldKey =
   | "name"
   | "contactMethod"
   | "contactValue"
-  | "role"
+  | "stage"
   | "language"
   | "consent";
 
 export type FieldErrors = Partial<Record<FieldKey, string>>;
 
-const ROLE_VALUES = new Set<string>(ROLES.map((role) => role.value));
+const STAGE_VALUES = new Set<string>(STAGES.map((stage) => stage.value));
 const LANGUAGE_VALUES = new Set<string>(LANGUAGES);
 
 function asRecord(input: unknown): Record<string, unknown> | null {
@@ -107,9 +107,9 @@ export function validatePilot(
     }
   }
 
-  const role = readString(record, "role");
-  if (!ROLE_VALUES.has(role)) {
-    fields.role = "Choose the role that best describes you.";
+  const stage = readString(record, "stage");
+  if (!STAGE_VALUES.has(stage)) {
+    fields.stage = "Choose where your family is in the process.";
   }
 
   const languageRaw = readString(record, "language");
@@ -132,7 +132,7 @@ export function validatePilot(
       name,
       contactMethod: contactMethod as "email" | "phone",
       contactValue: cleanedContact,
-      role: role as Role,
+      stage: stage as Stage,
       language: languageRaw || null,
     },
   };

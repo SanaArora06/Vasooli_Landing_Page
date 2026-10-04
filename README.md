@@ -52,7 +52,7 @@ Copy `.env.example` if you want to override the defaults. None of these are requ
 | `PILOT_STORAGE` | Set to `off` to refuse writes. The form then says signup is unavailable. |
 | `PILOT_ALLOWED_ORIGINS` | Optional comma-separated browser origins allowed to post. When unset, the `Origin` host must match the `Host` header. |
 
-Collected fields: name, email or phone, role, optional language, and consent to be contacted about the pilot. The form does not ask for policy numbers, medical records, diagnoses, Aadhaar or bank details. Pilot-contact consent is separate from any future permission to handle a claim, and it is not marketing consent.
+Collected fields: name, email or phone, where the family is in treatment or the claim (including “Just exploring”), optional language, and consent to be contacted about the pilot. The form does not ask for policy numbers, medical records, diagnoses, Aadhaar or bank details. Pilot-contact consent is separate from any future permission to handle a claim, and it is not marketing consent. No email or SMS is sent.
 
 A browser without JavaScript can still post the form. The server redirects back with a receipt only after the row is stored. The success message is shown only when that receipt exists in the database.
 

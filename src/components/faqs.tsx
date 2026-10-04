@@ -4,54 +4,54 @@ import { useId, useState } from "react";
 
 const FAQS = [
   {
-    question: "Can I use Vasooli today?",
+    question: "Is Vasooli available today?",
     answer:
-      "Vasooli is in the works inside Polifyx by Insurance Samadhan. The follow-up on this page is what is being built now. Leave your details if you want a note when a household can start. That note does not file a claim.",
+      "Not as a live service. Vasooli is being developed inside Polifyx, with Insurance Samadhan. Joining the waitlist does not start a claim, and this page cannot handle one today.",
   },
   {
-    question: "Can we begin before the hospital stay?",
+    question: "Can I start before hospitalisation?",
     answer:
-      "Yes. The episode is meant to open on the diagnostic bill, before admission, and stay with you through recovery and the settlement letter.",
+      "Yes. The claim journey can begin with a diagnostic bill, before admission, and continue through the stay, recovery and settlement.",
   },
   {
-    question: "Will every bill be paid?",
+    question: "Does this work if the hospitalisation was cashless?",
     answer:
-      "No. Vasooli pursues what that policy allows, and shows the clause when something is not allowed. The insurer still assesses the claim. A payment is not promised.",
+      "Cashless can settle the hospital bill and still leave scans, medicines and follow-up care to be claimed. Those need their own documents and a link to the treatment. Cover depends on the policy.",
   },
   {
-    question: "Can I do this for a parent?",
+    question: "Will every bill be reimbursed?",
     answer:
-      "Yes. You name who Vasooli may act for, with the patient’s permission. That list sits with two other limits you set: a rupee ceiling, and how far a follow-up may go.",
+      "No. Vasooli can organise what may belong in a claim and explain a deduction. The insurer assesses coverage and payment. A payment is not guaranteed.",
   },
   {
-    question: "What do I still decide?",
+    question: "Can I manage this for a parent or partner?",
     answer:
-      "Any fact about the patient’s condition, sending the claim, accepting a partial settlement, and withdrawing it. An appeal goes in only if you ask.",
+      "Yes, with the patient’s appropriate permission. Vasooli is being built for the person who collects the papers. It does not open someone else’s medical information to anyone who asks.",
   },
   {
-    question: "What if a paper is missing?",
+    question: "What do I have to approve?",
     answer:
-      "You see the gap. Vasooli chases it only on the routes you allowed. A document counts as received only when it actually arrives.",
+      "You verify the facts, authorise submission, and decide whether to accept a settlement or pursue a dispute. A claim is not sent without you.",
   },
   {
-    question: "A smaller amount came in. Then what?",
+    question: "What happens if documents are missing?",
     answer:
-      "Vasooli lines the settlement up against the claim and names the clause behind each deduction. You accept it, or ask an Insurance Samadhan specialist to take it further.",
+      "Vasooli flags the gap and why it may matter, and asks you to confirm or provide the paper. A document counts as received only when it is actually in hand.",
   },
   {
-    question: "Will my phone keep buzzing?",
+    question: "Can you help with partial payment or rejection?",
     answer:
-      "No. The habit being built is one line back when you forward a bill. It asks twice: a consent card before filing, and a one-time code at submission. It never asks for the insurer password. The only extra note is seven days before a filing window closes, if allowed money is still unclaimed.",
+      "The letter can be read against the policy and the documents you have. An Insurance Samadhan specialist can help where a clause is uncertain or a deduction is disputed. That does not guarantee a reversal or a recovery.",
   },
   {
-    question: "We hold two policies.",
+    question: "What if we have two policies?",
     answer:
-      "Both sit beside the same episode. You choose which one is filed. Vasooli does not file both, and it does not choose for you.",
+      "Each policy is looked at on its own terms. Which one to claim on depends on both policies and the treatment. The same expense is not reimbursed twice.",
   },
   {
     question: "What will it cost?",
     answer:
-      "The fee will be clear before anyone joins. This page does not quote a price, and it does not offer the full service for free.",
+      "The first check — one policy and one bill — is planned to be complimentary. Any later fee is shown before you agree. Partner-funded access will be named. This page does not quote a price.",
   },
 ];
 
@@ -60,7 +60,7 @@ export function Faqs() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faqs" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="faq-heading">
+    <section id="faqs" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
           Questions families ask

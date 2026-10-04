@@ -83,7 +83,7 @@ async function readPayload(request: Request): Promise<unknown> {
       name: form.get("name"),
       contactMethod: form.get("contactMethod"),
       contactValue: form.get("contactValue"),
-      role: form.get("role"),
+      stage: form.get("stage"),
       language: form.get("language"),
       consent: form.get("consent"),
     };

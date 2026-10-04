@@ -1,8 +1,4 @@
-import { Credibility } from "@/components/credibility";
-import { Experience } from "@/components/experience";
-import { Faqs } from "@/components/faqs";
-import { Partnership } from "@/components/partnership";
-import { PilotSignup } from "@/components/pilot-signup";
+import { PageShell } from "@/components/page-shell";
 import { hasReceipt } from "@/lib/db";
 import { STORAGE_UNAVAILABLE_MESSAGE } from "@/lib/pilot-schema";
 
@@ -37,16 +33,5 @@ export default async function Home({
     notice = NOTICES[params.interest] ?? null;
   }
 
-  return (
-    <Experience
-      credibility={<Credibility />}
-      partnership={<Partnership />}
-      rest={
-        <>
-          <PilotSignup initialRecorded={initialRecorded} notice={notice} />
-          <Faqs />
-        </>
-      }
-    />
-  );
+  return <PageShell initialRecorded={initialRecorded} notice={notice} />;
 }

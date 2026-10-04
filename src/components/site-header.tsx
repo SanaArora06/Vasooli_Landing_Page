@@ -5,9 +5,9 @@ import { IconClose, IconMenu } from "@/components/icons";
 import { InsuranceSamadhanLogo, VasooliLockup } from "@/components/logos";
 
 const LINKS = [
-  { href: "#credibility", id: "credibility", label: "Credibility" },
-  { href: "#partnership", id: "partnership", label: "Partnership" },
-  { href: "#how-it-works", id: "how-it-works", label: "How it works" },
+  { href: "#around", id: "around", label: "Around the stay" },
+  { href: "#where", id: "where", label: "Where you are" },
+  { href: "#sample", id: "sample", label: "Sample claim" },
   { href: "#faqs", id: "faqs", label: "FAQs" },
 ];
 
@@ -79,7 +79,7 @@ export function SiteHeader() {
             href="#pilot"
             className="ml-2 inline-flex min-h-11 items-center rounded-full bg-teal px-4 py-2 text-sm font-semibold text-paper hover:bg-teal-mid"
           >
-            Get in early
+            Join the pilot waitlist
           </a>
         </nav>
 
@@ -119,7 +119,7 @@ export function SiteHeader() {
                 className="inline-flex w-full items-center justify-center rounded-full bg-teal px-4 py-3 text-base font-semibold text-paper"
                 onClick={() => setOpen(false)}
               >
-                Get in early
+                Join the pilot waitlist
               </a>
             </li>
           </ul>

@@ -6,7 +6,7 @@ const valid = {
   name: "Ananya Iyer",
   contactMethod: "email",
   contactValue: "ananya@example.com",
-  role: "patient",
+  stage: "tests",
   language: "Hindi",
   consent: true,
 };
@@ -27,7 +27,7 @@ describe("validatePilot", () => {
       contactMethod: "phone",
       contactValue: "+91 98765-43210",
       language: "",
-      role: "family_caregiver",
+      stage: "discharge",
     });
     assert.equal(result.ok, true);
     if (result.ok) {
@@ -41,13 +41,13 @@ describe("validatePilot", () => {
       ...valid,
       contactValue: "not-an-email",
       consent: false,
-      role: "insurer",
+      stage: "insurer",
     });
     assert.equal(result.ok, false);
     if (!result.ok) {
       assert.match(result.fields.contactValue ?? "", /email/i);
       assert.match(result.fields.consent ?? "", /Consent/);
-      assert.match(result.fields.role ?? "", /role/i);
+      assert.match(result.fields.stage ?? "", /process/i);
     }
   });
 

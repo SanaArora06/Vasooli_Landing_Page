@@ -1,44 +1,19 @@
-import { InsuranceSamadhanLogo } from "@/components/logos";
-
-const POINTS = [
-  {
-    title: "A practice families already use",
-    body: "Insurance Samadhan sits with people when a claim stalls. Vasooli is being built on that work.",
-  },
-  {
-    title: "The window is watched from day one",
-    body: "The episode starts at the diagnostic bill, so the filing deadline is not a surprise at the end.",
-  },
-  {
-    title: "The last word stays yours",
-    body: "You approve the send and any partial settlement. A specialist steps in when a clause needs a person.",
-  },
-];
+import { InsuranceSamadhanLogo, VasooliLockup } from "@/components/logos";
 
 export function Credibility() {
   return (
-    <section id="credibility" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="credibility-heading">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-mid">Credibility</p>
-            <h2 id="credibility-heading" className="mt-2 font-serif text-3xl font-medium tracking-tight text-teal sm:text-4xl">
-              Built where the hard cases already go.
-            </h2>
-          </div>
+    <section id="credibility" className="scroll-mt-24 px-5 py-14 sm:px-8" aria-labelledby="credibility-heading">
+      <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-line bg-paper px-5 py-8 sm:px-8">
+        <h2 id="credibility-heading" className="font-serif text-3xl font-medium tracking-tight text-teal sm:text-4xl">
+          Built with Insurance Samadhan.
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink">
+          Vasooli brings document organisation and reimbursement follow-up into Polifyx, with Insurance Samadhan specialists available when a case needs human review.
+        </p>
+        <div className="mt-6 flex flex-wrap items-center gap-5">
+          <VasooliLockup />
           <InsuranceSamadhanLogo />
         </div>
-        <ul className="mt-8 grid gap-3 md:grid-cols-3">
-          {POINTS.map((point, index) => (
-            <li key={point.title} className="rounded-[1.5rem] border border-line bg-paper p-5">
-              <p className="font-serif text-3xl text-sun" aria-hidden="true">
-                0{index + 1}
-              </p>
-              <h3 className="mt-2 font-serif text-2xl leading-tight text-teal">{point.title}</h3>
-              <p className="mt-2 text-base leading-relaxed text-ink">{point.body}</p>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

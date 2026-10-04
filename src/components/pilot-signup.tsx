@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useJourney } from "@/components/journey";
 import {
   LANGUAGES,
-  ROLES,
+  STAGES,
   SUCCESS_MESSAGE,
   validatePilot,
   type FieldErrors,
+  type Stage,
 } from "@/lib/pilot-schema";
 
 const fieldClass =
@@ -21,12 +23,12 @@ export function PilotSignup({
   initialRecorded: boolean;
   notice: Notice;
 }) {
+  const { stage, setStage } = useJourney();
   const [recorded, setRecorded] = useState(initialRecorded);
   const [name, setName] = useState("");
   const [contactMethod, setContactMethod] = useState<"email" | "phone">("email");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [role, setRole] = useState("");
   const [language, setLanguage] = useState("");
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -47,6 +49,7 @@ export function PilotSignup({
   }, [recorded, errors, banner]);
 
   const errorEntries = Object.entries(errors).filter((entry): entry is [string, string] => Boolean(entry[1]));
+  const stageLabel = STAGES.find((item) => item.value === stage)?.label;
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -54,7 +57,7 @@ export function PilotSignup({
       name,
       contactMethod,
       contactValue: contactMethod === "email" ? email : phone,
-      role,
+      stage,
       language,
       consent,
     };
@@ -112,27 +115,28 @@ export function PilotSignup({
   }
 
   return (
-    <section id="pilot" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="pilot-heading">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+    <section id="pilot" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="pilot-heading">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-mid">Get in early</p>
-          <h2 id="pilot-heading" className="mt-3 font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
-            Ask to be included as it opens.
+          <h2 id="pilot-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
+            Let us know when your family needs a hand.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink">
-            Vasooli is in the works. Leave a way to reach you. This does not start a claim.
+            Join the pilot waitlist and tell us where you are in the process.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-            Name and a phone or email only. No policy, medical, Aadhaar, or bank details.
+            Please don’t share policy documents, medical records, Aadhaar or bank details here.
           </p>
         </div>
 
-        <div className="rounded-[1.75rem] border border-line bg-paper p-5 shadow-[0_18px_40px_-32px_rgba(20,63,60,0.6)] sm:p-7">
+        <div className="rounded-[1.75rem] border border-line bg-paper p-5 sm:p-7">
           {recorded ? (
             <div ref={successRef} tabIndex={-1} role="status" className="rounded-3xl bg-sage p-5">
               <p className="font-serif text-2xl text-teal">{SUCCESS_MESSAGE}</p>
               <p className="mt-3 text-ink">
-                We will use your contact details only to talk about the pilot. This is not permission to handle a claim.
+                We stored your name, how to reach you
+                {stageLabel ? `, and that you are at: ${stageLabel}` : ""}. We will use that only to talk about the pilot.
+                This page does not send email or SMS, and it does not say when someone will reply.
               </p>
               <button
                 type="button"
@@ -142,9 +146,9 @@ export function PilotSignup({
                   setName("");
                   setEmail("");
                   setPhone("");
-                  setRole("");
                   setLanguage("");
                   setConsent(false);
+                  setStage("");
                   setErrors({});
                   setBanner(null);
                 }}
@@ -154,14 +158,12 @@ export function PilotSignup({
             </div>
           ) : (
             <form method="post" action="/api/pilot" onSubmit={onSubmit} noValidate aria-busy={loading}>
-              <p className="text-sm text-ink-soft">Required fields are marked. Optional language can be left blank.</p>
-
               {banner ? (
                 <div
                   ref={bannerRef}
                   tabIndex={-1}
                   role="alert"
-                  className="mt-4 rounded-2xl border border-danger/30 bg-danger-bg px-3 py-3 text-sm text-danger"
+                  className="rounded-2xl border border-danger/30 bg-danger-bg px-3 py-3 text-sm text-danger"
                 >
                   {banner}
                 </div>
@@ -184,7 +186,7 @@ export function PilotSignup({
                 <div ref={summaryRef} tabIndex={-1} />
               )}
 
-              <div className="mt-5">
+              <div className="mt-1">
                 <label htmlFor="pilot-name" className="font-semibold text-teal">
                   Name <span className="font-medium text-ink-soft">(required)</span>
                 </label>
@@ -269,29 +271,29 @@ export function PilotSignup({
                 </p>
               ) : null}
 
-              <div className="mt-5" id="pilot-role">
-                <label htmlFor="pilot-role-select" className="font-semibold text-teal">
-                  Role <span className="font-medium text-ink-soft">(required)</span>
+              <div className="mt-5" id="pilot-stage">
+                <label htmlFor="pilot-stage-select" className="font-semibold text-teal">
+                  Where you are <span className="font-medium text-ink-soft">(required)</span>
                 </label>
                 <select
-                  id="pilot-role-select"
-                  name="role"
-                  value={role}
-                  onChange={(event) => setRole(event.target.value)}
-                  aria-invalid={errors.role ? true : undefined}
-                  aria-describedby={errors.role ? "pilot-role-error" : undefined}
+                  id="pilot-stage-select"
+                  name="stage"
+                  value={stage}
+                  onChange={(event) => setStage(event.target.value as Stage | "")}
+                  aria-invalid={errors.stage ? true : undefined}
+                  aria-describedby={errors.stage ? "pilot-stage-error" : undefined}
                   className={fieldClass}
                 >
                   <option value="">Choose one</option>
-                  {ROLES.map((item) => (
+                  {STAGES.map((item) => (
                     <option key={item.value} value={item.value}>
                       {item.label}
                     </option>
                   ))}
                 </select>
-                {errors.role ? (
-                  <p id="pilot-role-error" className="mt-1 text-sm text-danger">
-                    {errors.role}
+                {errors.stage ? (
+                  <p id="pilot-stage-error" className="mt-1 text-sm text-danger">
+                    {errors.stage}
                   </p>
                 ) : null}
               </div>
@@ -335,12 +337,7 @@ export function PilotSignup({
                     aria-describedby={errors.consent ? "pilot-consent-error" : undefined}
                     className="mt-1"
                   />
-                  <span>
-                    <span className="font-semibold text-teal">Contact about the pilot (required)</span>
-                    <span className="mt-1 block text-sm leading-relaxed text-ink">
-                      I agree to be contacted as Vasooli opens. This is only permission to discuss that. It is not permission to handle a claim, and it is not consent for other marketing.
-                    </span>
-                  </span>
+                  <span className="font-semibold text-teal">I agree to be contacted about the Vasooli pilot.</span>
                 </label>
                 {errors.consent ? (
                   <p id="pilot-consent-error" className="mt-1 text-sm text-danger">
@@ -354,11 +351,8 @@ export function PilotSignup({
                 disabled={loading}
                 className="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-teal px-5 py-3 text-base font-semibold text-paper hover:bg-teal-mid disabled:cursor-wait sm:w-auto"
               >
-                {loading ? "Recording interest…" : "Record my interest"}
+                {loading ? "Recording interest…" : "Join the pilot waitlist"}
               </button>
-              <p className="mt-3 text-sm text-ink-soft">
-                Submitting this form does not submit a claim. We do not send email or messages from this page.
-              </p>
             </form>
           )}
         </div>
