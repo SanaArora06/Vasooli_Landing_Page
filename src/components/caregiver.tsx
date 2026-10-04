@@ -7,9 +7,10 @@ export function Caregiver() {
         <Image
           src="/photos/parent-daughter.jpg"
           alt="A father and daughter smiling as they walk through a garden."
-          width={1200}
-          height={900}
-          className="h-64 w-full rounded-[1.75rem] object-cover sm:h-72"
+          width={1152}
+          height={864}
+          sizes="(min-width: 1024px) 36rem, 100vw"
+          className="aspect-[4/3] w-full rounded-[1.75rem] object-cover object-[center_top]"
         />
         <div>
           <h2 id="family-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">
