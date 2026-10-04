@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SITUATIONS, useJourney } from "@/components/journey";
 
 export function Situation() {
@@ -8,9 +9,18 @@ export function Situation() {
   return (
     <section id="where" className="scroll-mt-24 bg-paper px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="where-heading">
       <div className="mx-auto max-w-6xl">
-        <h2 id="where-heading" className="max-w-xl font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
-          Where is your family in the process?
-        </h2>
+        <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)]">
+          <Image
+            src="/photos/couple-kitchen.jpg"
+            alt="A couple laughing together while making tea at home."
+            width={1200}
+            height={900}
+            className="h-52 w-full rounded-[1.5rem] object-cover sm:h-64"
+          />
+          <h2 id="where-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">
+            Where is your family in the process?
+          </h2>
+        </div>
         <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
           An illustrative preview. Choosing a stage does not upload anything, and it does not decide what your policy covers.
         </p>
@@ -27,7 +37,7 @@ export function Situation() {
                   selected ? "border-teal bg-sage" : "border-line bg-ivory hover:bg-sage/60"
                 }`}
               >
-                <span className="block text-lg font-semibold text-teal">{item.label}</span>
+                <span className="block text-lg font-semibold text-ink">{item.label}</span>
               </button>
             );
           })}
