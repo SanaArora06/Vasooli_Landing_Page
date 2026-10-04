@@ -4,59 +4,54 @@ import { useId, useState } from "react";
 
 const FAQS = [
   {
-    question: "Is Vasooli part of Polifyx?",
+    question: "Can I use Vasooli today?",
     answer:
-      "Vasooli is a proposed service inside Polifyx by Insurance Samadhan. This page introduces it and collects interest in a pilot. It is not a separate claims app, and it is not a live service.",
+      "Vasooli is in the works inside Polifyx by Insurance Samadhan. The follow-up on this page is what is being built now. Leave your details if you want a note when a household can start. That note does not file a claim.",
   },
   {
-    question: "Can I start before hospitalisation?",
+    question: "Can we begin before the hospital stay?",
     answer:
-      "Yes. The journey can begin with a diagnostic bill, before a hospital stay, and continue through recovery and settlement.",
+      "Yes. The episode is meant to open on the diagnostic bill, before admission, and stay with you through recovery and the settlement letter.",
   },
   {
-    question: "Does every bill qualify?",
+    question: "Will every bill be paid?",
     answer:
-      "No. Some surrounding expenses may be reimbursable when your policy covers them and the required treatment link and evidence are established. Your policy guides the assessment. Vasooli does not decide coverage.",
+      "No. Vasooli pursues what that policy allows, and shows the clause when something is not allowed. The insurer still assesses the claim. A payment is not promised.",
   },
   {
-    question: "Can I help a family member?",
+    question: "Can I do this for a parent?",
     answer:
-      "A family member can help organise documents with the patient’s permission. Assisted onboarding is a proposed pilot option, not an established nationwide service.",
+      "Yes. You name who Vasooli may act for, with the patient’s permission. That list sits with two other limits you set: a rupee ceiling, and how far a follow-up may go.",
   },
   {
-    question: "What will I need to approve?",
+    question: "What do I still decide?",
     answer:
-      "You verify medical facts and factual contradictions, and you approve final submission. You also decide whether to accept a partial settlement, withdraw a claim, or appeal.",
+      "Any fact about the patient’s condition, sending the claim, accepting a partial settlement, and withdrawing it. An appeal goes in only if you ask.",
   },
   {
-    question: "What happens if a document is missing?",
+    question: "What if a paper is missing?",
     answer:
-      "Vasooli names the gap and can chase it only on routes you have allowed. You can see what is present, what is missing, and why an action is proposed. A document is not treated as received until it actually is.",
+      "You see the gap. Vasooli chases it only on the routes you allowed. A document counts as received only when it actually arrives.",
   },
   {
-    question: "What happens after a partial settlement?",
+    question: "A smaller amount came in. Then what?",
     answer:
-      "Vasooli matches the settlement to the submitted claim and names the clause behind each deduction. Accepting that amount stays with you. In the proposed model, an Insurance Samadhan specialist can be brought in when there is uncertainty or a dispute.",
+      "Vasooli lines the settlement up against the claim and names the clause behind each deduction. You accept it, or ask an Insurance Samadhan specialist to take it further.",
   },
   {
-    question: "Will it message me all the time?",
+    question: "Will my phone keep buzzing?",
     answer:
-      "The proposed habit is quiet. You forward a bill and get one line back. Vasooli interrupts twice: a consent card before filing, and a one-time code at submission. It never asks for the insurer password. The only unprompted note is seven days before a filing window closes, if allowed money is still unclaimed. This page does not send those messages.",
+      "No. The habit being built is one line back when you forward a bill. It asks twice: a consent card before filing, and a one-time code at submission. It never asks for the insurer password. The only extra note is seven days before a filing window closes, if allowed money is still unclaimed.",
   },
   {
-    question: "What if we have two policies?",
+    question: "We hold two policies.",
     answer:
-      "Both policies are laid next to the same episode. You approve which one is filed. Vasooli does not file both, and it does not choose for you.",
-  },
-  {
-    question: "Is the pilot available now?",
-    answer:
-      "Not as a live service. This is a competition concept for a proposed pilot. The form records your interest. It does not enrol you, and it does not submit a claim.",
+      "Both sit beside the same episode. You choose which one is filed. Vasooli does not file both, and it does not choose for you.",
   },
   {
     question: "What will it cost?",
     answer:
-      "Pilot scope and fees will be explained before participation. This page does not offer a free full-service product, and it does not quote a price.",
+      "The fee will be clear before anyone joins. This page does not quote a price, and it does not offer the full service for free.",
   },
 ];
 
@@ -65,12 +60,12 @@ export function Faqs() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faqs" className="scroll-mt-48 px-5 py-16 sm:px-8 sm:py-24" aria-labelledby="faq-heading">
+    <section id="faqs" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-3xl">
         <h2 id="faq-heading" className="font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
           Questions families ask
         </h2>
-        <div className="mt-8 divide-y divide-line rounded-[1.75rem] border border-line bg-paper">
+        <div className="mt-6 divide-y divide-line rounded-[1.75rem] border border-line bg-paper">
           {FAQS.map((item, index) => {
             const expanded = open === index;
             const panelId = `${baseId}-panel-${index}`;
@@ -87,7 +82,7 @@ export function Faqs() {
                     onClick={() => setOpen(expanded ? null : index)}
                   >
                     <span>{item.question}</span>
-                    <span aria-hidden="true" className="text-2xl leading-none text-peach">
+                    <span aria-hidden="true" className="text-2xl leading-none text-coral">
                       {expanded ? "–" : "+"}
                     </span>
                   </button>

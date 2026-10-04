@@ -3,25 +3,30 @@
 @theme inline {
   --font-sans: var(--font-source-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), Fraunces, Georgia, "Times New Roman", serif;
-  --color-ivory: #f3eee6;
-  --color-ivory-deep: #e6dfd2;
-  --color-paper: #fbf8f3;
-  --color-ink: #1a3330;
-  --color-ink-soft: #3a524e;
-  --color-teal: #143f3c;
-  --color-teal-mid: #1f5c55;
-  --color-sage: #e5f0e8;
-  --color-sage-deep: #c5dbcf;
-  --color-peach: #e7a27a;
-  --color-peach-soft: #f6e4d6;
-  --color-line: #e3d9cb;
+  --color-ivory: #fff6ea;
+  --color-ivory-deep: #ffe6c2;
+  --color-paper: #fffdf9;
+  --color-ink: #1b2a33;
+  --color-ink-soft: #3e5563;
+  --color-teal: #0e4d73;
+  --color-teal-mid: #1a7ab0;
+  --color-sage: #e5f6ee;
+  --color-sage-deep: #b7e4cb;
+  --color-peach: #e8832a;
+  --color-peach-soft: #fff3d2;
+  --color-sun: #f0c000;
+  --color-sky: #2f9fe0;
+  --color-sky-soft: #e8f6fd;
+  --color-leaf: #1f9a62;
+  --color-coral: #e25b24;
+  --color-line: #eadcc8;
   --color-danger: #8c3a32;
   --color-danger-bg: #f8ece8;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 12rem;
+  scroll-padding-top: 5.5rem;
   color-scheme: light;
 }
 
@@ -41,8 +46,8 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 70% 40% at 0% -10%, rgba(231, 162, 122, 0.16), transparent 50%),
-    radial-gradient(ellipse 55% 36% at 100% 0%, rgba(197, 219, 207, 0.7), transparent 46%),
+    radial-gradient(ellipse 60% 42% at 100% -8%, rgba(47, 159, 224, 0.18), transparent 52%),
+    radial-gradient(ellipse 50% 36% at 0% 0%, rgba(240, 192, 0, 0.22), transparent 48%),
     var(--color-ivory);
   color: var(--color-ink);
   font-family: var(--font-sans);
@@ -52,12 +57,12 @@ body {
 }
 
 ::selection {
-  background: #c5dbcf;
-  color: #143f3c;
+  background: #fff3d2;
+  color: #0e4d73;
 }
 
 :focus-visible {
-  outline: 3px solid #143f3c;
+  outline: 3px solid #0e4d73;
   outline-offset: 3px;
 }
 
@@ -78,8 +83,8 @@ summary,
   top: -4rem;
   z-index: 80;
   border-radius: 999px;
-  background: #143f3c;
-  color: #fbf8f3;
+  background: #0e4d73;
+  color: #fffdf9;
   padding: 0.7rem 1rem;
   font-weight: 600;
 }
@@ -103,8 +108,27 @@ summary,
   }
 }
 
+.live-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #1f9a62;
+  box-shadow: 0 0 0 0 rgba(31, 154, 98, 0.55);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 8px rgba(31, 154, 98, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .motion-rise {
+    animation: none;
+  }
+
+  .live-dot {
     animation: none;
   }
 }

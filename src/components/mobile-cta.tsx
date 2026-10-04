@@ -43,7 +43,7 @@ export function MobileCta() {
         href="#pilot"
         className="flex min-h-12 items-center justify-center rounded-full bg-teal px-5 text-base font-semibold text-paper"
       >
-        Join the pilot
+        Get in early
       </a>
     </div>
   );

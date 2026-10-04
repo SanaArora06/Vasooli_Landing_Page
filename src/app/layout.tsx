@@ -19,9 +19,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Vasooli — reimbursement support inside Polifyx",
+  title: "Vasooli — health reimbursement with Insurance Samadhan",
   description:
-    "Vasooli is a proposed pilot inside Polifyx by Insurance Samadhan. It helps families organise healthcare documents, prepare reimbursement submissions and understand settlement deductions. Competition concept.",
+    "Vasooli is in the works inside Polifyx by Insurance Samadhan. It follows a health reimbursement from the first bill to the settlement, while you keep the decisions.",
   robots: { index: true, follow: true },
 };
 

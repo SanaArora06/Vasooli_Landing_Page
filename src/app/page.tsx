@@ -1,12 +1,8 @@
-import { Everyday } from "@/components/everyday";
-import { FamilySupport } from "@/components/family-support";
+import { Credibility } from "@/components/credibility";
+import { Experience } from "@/components/experience";
 import { Faqs } from "@/components/faqs";
-import { Hero } from "@/components/hero";
-import { HowItWorks } from "@/components/how-it-works";
-import { HumanControl } from "@/components/human-control";
-import { PaperworkJourney } from "@/components/paperwork-journey";
+import { Partnership } from "@/components/partnership";
 import { PilotSignup } from "@/components/pilot-signup";
-import { SampleClaim } from "@/components/sample-claim";
 import { hasReceipt } from "@/lib/db";
 import { STORAGE_UNAVAILABLE_MESSAGE } from "@/lib/pilot-schema";
 
@@ -32,7 +28,7 @@ export default async function Home({
     try {
       initialRecorded = hasReceipt(receipt);
       if (!initialRecorded) {
-        notice = "We could not find a stored pilot interest for this link. Nothing new was saved.";
+        notice = "We could not find a stored interest for this link. Nothing new was saved.";
       }
     } catch {
       notice = STORAGE_UNAVAILABLE_MESSAGE;
@@ -42,16 +38,15 @@ export default async function Home({
   }
 
   return (
-    <>
-      <Hero />
-      <PaperworkJourney />
-      <HowItWorks />
-      <Everyday />
-      <SampleClaim />
-      <HumanControl />
-      <FamilySupport />
-      <PilotSignup initialRecorded={initialRecorded} notice={notice} />
-      <Faqs />
-    </>
+    <Experience
+      credibility={<Credibility />}
+      partnership={<Partnership />}
+      rest={
+        <>
+          <PilotSignup initialRecorded={initialRecorded} notice={notice} />
+          <Faqs />
+        </>
+      }
+    />
   );
 }

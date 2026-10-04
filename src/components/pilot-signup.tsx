@@ -112,23 +112,18 @@ export function PilotSignup({
   }
 
   return (
-    <section id="pilot" className="scroll-mt-48 px-5 py-16 sm:px-8 sm:py-24" aria-labelledby="pilot-heading">
+    <section id="pilot" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-16" aria-labelledby="pilot-heading">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-mid">Pilot interest</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-teal-mid">Get in early</p>
           <h2 id="pilot-heading" className="mt-3 font-serif text-3xl font-medium leading-tight tracking-tight text-teal sm:text-4xl">
-            Be part of the Vasooli pilot.
+            Ask to be included as it opens.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink">
-            Tell us how to reach you about the proposed pilot. This form does not start a claim.
+            Vasooli is in the works. Leave a way to reach you. This does not start a claim.
           </p>
-          <ul className="mt-5 space-y-2 text-ink">
-            <li>No policy numbers.</li>
-            <li>No medical documents or diagnoses.</li>
-            <li>No Aadhaar or bank details.</li>
-          </ul>
-          <p className="mt-5 text-sm leading-relaxed text-ink-soft">
-            Hospitals, employers and TPAs can leave interest here. That does not create a partnership or a live integration.
+          <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+            Name and a phone or email only. No policy, medical, Aadhaar, or bank details.
           </p>
         </div>
 
@@ -343,7 +338,7 @@ export function PilotSignup({
                   <span>
                     <span className="font-semibold text-teal">Contact about the pilot (required)</span>
                     <span className="mt-1 block text-sm leading-relaxed text-ink">
-                      I agree to be contacted about the Vasooli pilot. This is only permission to discuss the pilot. It is not permission to handle a claim, and it is not consent for other marketing.
+                      I agree to be contacted as Vasooli opens. This is only permission to discuss that. It is not permission to handle a claim, and it is not consent for other marketing.
                     </span>
                   </span>
                 </label>

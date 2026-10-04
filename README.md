@@ -1,6 +1,6 @@
 # Vasooli
 
-Vasooli is a proposed health reimbursement service inside **Polifyx by Insurance Samadhan**. This site introduces the concept for The Ken’s agent competition and collects pilot interest. It is not a live claims service.
+Vasooli is a health reimbursement service in the works inside **Polifyx by Insurance Samadhan**. This site explains it and collects interest while it is being built. It is not a live claims service yet.
 
 The working principle on the page is: **Automate the chase. Keep consequential decisions with you.**
 
@@ -74,7 +74,7 @@ If the site is served from a public origin that differs from the internal host h
 
 ## Assets and information still required before a public launch
 
-Official files were not in this repository. The page uses original Vasooli lettering and a simple document-and-check symbol, plus typographic wordmarks for Polifyx and Insurance Samadhan. It does not redraw official logos.
+The Insurance Samadhan mark on the page is the icon supplied for this project (`public/brand/insurance-samadhan.png`), shown with the name in type. The Vasooli mark is a temporary logo: a sunrise, a bill, and a check. It should be replaced when a final Vasooli logo is ready.
 
 Still needed from the brand owners:
 

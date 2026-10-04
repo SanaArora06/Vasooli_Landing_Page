@@ -2,12 +2,12 @@
 
 import { useEffect, useId, useState } from "react";
 import { IconClose, IconMenu } from "@/components/icons";
-import { VasooliWordmark } from "@/components/wordmark";
+import { InsuranceSamadhanLogo, VasooliLockup } from "@/components/logos";
 
 const LINKS = [
+  { href: "#credibility", id: "credibility", label: "Credibility" },
+  { href: "#partnership", id: "partnership", label: "Partnership" },
   { href: "#how-it-works", id: "how-it-works", label: "How it works" },
-  { href: "#explore-a-claim", id: "explore-a-claim", label: "Explore a claim" },
-  { href: "#your-control", id: "your-control", label: "Your control" },
   { href: "#faqs", id: "faqs", label: "FAQs" },
 ];
 
@@ -29,7 +29,7 @@ export function SiteHeader() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target.id) setCurrent(visible.target.id);
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: [0.15, 0.4] },
+      { rootMargin: "-30% 0px -55% 0px", threshold: [0.2, 0.5] },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -53,14 +53,12 @@ export function SiteHeader() {
 
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-line/80 bg-ivory/92 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-        <a href="#top" className="min-w-0 rounded-lg">
-          <VasooliWordmark />
-          <span className="mt-1.5 block max-w-[18rem] text-sm leading-snug text-ink-soft">
-            A proposed service in Polifyx by Insurance Samadhan.
-          </span>
-          <span className="mt-2 inline-flex rounded-full border border-teal/15 bg-paper px-2.5 py-1 text-sm font-medium leading-none text-teal">
-            Competition concept · Proposed pilot
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 sm:px-8">
+        <a href="#top" className="flex min-w-0 items-center gap-3 rounded-lg">
+          <VasooliLockup markClassName="h-9 w-9" />
+          <span className="hidden h-8 w-px bg-line sm:block" aria-hidden="true" />
+          <span className="hidden sm:inline-flex">
+            <InsuranceSamadhanLogo markClassName="h-8 w-11" />
           </span>
         </a>
 
@@ -81,7 +79,7 @@ export function SiteHeader() {
             href="#pilot"
             className="ml-2 inline-flex min-h-11 items-center rounded-full bg-teal px-4 py-2 text-sm font-semibold text-paper hover:bg-teal-mid"
           >
-            Join the pilot
+            Get in early
           </a>
         </nav>
 
@@ -99,6 +97,9 @@ export function SiteHeader() {
 
       {open ? (
         <nav id={menuId} aria-label="Primary" className="border-t border-line bg-ivory px-5 py-3 lg:hidden">
+          <div className="px-3 pb-3">
+            <InsuranceSamadhanLogo />
+          </div>
           <ul className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <li key={link.href}>
@@ -118,7 +119,7 @@ export function SiteHeader() {
                 className="inline-flex w-full items-center justify-center rounded-full bg-teal px-4 py-3 text-base font-semibold text-paper"
                 onClick={() => setOpen(false)}
               >
-                Join the pilot
+                Get in early
               </a>
             </li>
           </ul>
